@@ -1,0 +1,12 @@
+{
+  "name": "ezn",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "EZN - browser-only PC analysis and upgrade advisor",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && npx serve dist",
+    "test": "node test/engine.test.mjs"
+  }
+}

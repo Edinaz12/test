@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EZN - PC Analysis</title>
+<meta name="description" content="EZN detects your PC in the browser and tells you what to upgrade first.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="titlebar">
+  <span class="logo">EZN</span>
+  <span class="sub">PC analysis and upgrade advisor</span>
+  <span class="spacer"></span>
+  <span id="status-detect" class="status">Detecting...</span>
+</header>
+
+<form class="toolbar" id="toolbar" onsubmit="return false" aria-label="Analysis settings">
+  <label>Game <select id="sel-game"></select></label>
+  <label>Resolution <select id="sel-res"></select></label>
+  <label>Settings <select id="sel-preset"></select></label>
+  <label>Display <select id="sel-hz"></select></label>
+  <button type="button" id="btn-redetect" title="Run detection again">Re-detect</button>
+  <button type="button" id="btn-reset" title="Forget saved selections">Reset</button>
+</form>
+
+<main class="layout">
+  <section class="col-left">
+    <div class="panel" id="p-system">
+      <h2>System Overview</h2>
+      <div id="system"></div>
+    </div>
+    <div class="panel" id="p-detect">
+      <h2>Browser Detection</h2>
+      <div id="detect-raw"></div>
+    </div>
+  </section>
+
+  <section class="col-right">
+    <div class="panel" id="p-verdict">
+      <h2>What should I upgrade first?</h2>
+      <div id="verdict"></div>
+    </div>
+    <div class="panel" id="p-upgrades">
+      <h2>Upgrade Recommendations</h2>
+      <div id="upgrades"></div>
+    </div>
+    <div class="panel" id="p-analysis">
+      <h2>Analysis</h2>
+      <div id="analysis"></div>
+    </div>
+    <div class="panel" id="p-presets">
+      <h2 id="presets-title">Game Presets</h2>
+      <div id="presets"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span id="foot-note">Estimates are calculated from a built-in model, not measured. Prices are reference values in CHF and can differ in shops.</span>
+  <span class="spacer"></span>
+  <span id="foot-aff">Shop links may be affiliate links. We may earn a commission at no cost to you.</span>
+</footer>
+
+<script src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
